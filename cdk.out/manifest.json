@@ -1,0 +1,130 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "ScnorthsouthStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ScnorthsouthStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ScnorthsouthStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "ScnorthsouthStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/595b24b005eaea2f9c103676b490cbac91a7ef363d2a5afae8413cccd5b0c23b.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ScnorthsouthStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "ScnorthsouthStack.assets"
+      ],
+      "metadata": {
+        "/ScnorthsouthStack/iam-policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iampolicy6C93E3BF"
+          }
+        ],
+        "/ScnorthsouthStack/cfn-policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cfnpolicy5C1835BC"
+          }
+        ],
+        "/ScnorthsouthStack/lambda-policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdapolicyA5E98E09"
+          }
+        ],
+        "/ScnorthsouthStack/ec2-policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ec2policy1780B2EF"
+          }
+        ],
+        "/ScnorthsouthStack/sc-northsouth-endusers/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "scnorthsouthendusers0B76E763"
+          }
+        ],
+        "/ScnorthsouthStack/scenduserGroup0": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "scenduserGroup0"
+          }
+        ],
+        "/ScnorthsouthStack/NorthSouthRouteProviderPortfolio/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NorthSouthRouteProviderPortfolioE6457169"
+          }
+        ],
+        "/ScnorthsouthStack/NorthSouthRouteProviderPortfolio/PortfolioProductAssociatione721423c6e0b": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NorthSouthRouteProviderPortfolioPortfolioProductAssociatione721423c6e0b3196AD31"
+          }
+        ],
+        "/ScnorthsouthStack/NorthSouthRouteProviderPortfolio/PortolioPrincipalAssociation60f5ad45ad60": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NorthSouthRouteProviderPortfolioPortolioPrincipalAssociation60f5ad45ad600189B7A2"
+          }
+        ],
+        "/ScnorthsouthStack/NorthSouthRouteProviderProduct/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NorthSouthRouteProviderProduct0DDA1DB3"
+          }
+        ],
+        "/ScnorthsouthStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ScnorthsouthStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/ScnorthsouthStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ScnorthsouthStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ScnorthsouthStack"
+    }
+  }
+}

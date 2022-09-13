@@ -1,0 +1,19 @@
+{
+  "version": "20.0.0",
+  "files": {
+    "595b24b005eaea2f9c103676b490cbac91a7ef363d2a5afae8413cccd5b0c23b": {
+      "source": {
+        "path": "ScnorthsouthStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "595b24b005eaea2f9c103676b490cbac91a7ef363d2a5afae8413cccd5b0c23b.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
